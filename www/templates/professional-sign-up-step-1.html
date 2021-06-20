@@ -1,0 +1,195 @@
+<ion-view view-title="Step-1" hide-nav-bar="true" class="grey_bg">
+    <ion-content>
+        <style>
+            .list {
+                margin-bottom: 0px !important;
+            }
+        </style>
+        <div class="padding-left">
+            <h4 class="positive">Register as a Professional/Job Seeker </h4>
+            <h5 class="positive">it is Easy, Safe and Free </h5>
+        </div>
+        <div class="list">
+            <label class="item item-input">
+                <input type="email" placeholder="Email ID" ng-model="regForm.email">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Name" ng-model="regForm.name">
+            </label>
+            <label class="item item-divider">
+                Gender
+            </label>
+            <ion-list>
+                <ion-radio ng-model="regForm.gender" ng-value="'Male'">Male</ion-radio>
+                <ion-radio ng-model="regForm.gender" ng-value="'Female'">Female</ion-radio>
+            </ion-list>
+            <label class="item item-input">
+                <input type="text" placeholder="Country" ng-model="regForm.country.country_name" ng-focus="openCountry()">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="State" ng-model="regForm.state.state_name" ng-focus="openState()">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="City" ng-model="regForm.city.city_name" ng-focus="openCity()">
+            </label>
+            <label class="item item-input">
+                <input type="tel" placeholder="Mobile No" ng-model="regForm.mobile_no">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Profession" ng-model="regForm.profession.profession_name" ng-focus="openProfession()">
+            </label>
+            <label class="item item-divider">
+                I am seeking
+            </label>
+            <ul class="list">
+                <li class="item item-toggle">
+                    Work & Assignments
+                    <label class="toggle toggle-positive">
+                        <input type="checkbox" ng-checked="reg.professional_interest==1" ng-model="regForm.professional_interest" ng-true-value="1" ng-false-value="0">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <li class="item item-toggle">
+                    Jobs
+                    <label class="toggle toggle-positive">
+                        <input type="checkbox" ng-checked="reg.jobseeker_interest==1" ng-model="regForm.jobseeker_interest" ng-true-value="1" ng-false-value="0">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <li class="item item-toggle">
+                    An online Presence
+                    <label class="toggle toggle-positive">
+                        <input type="checkbox" ng-checked="reg.profile_interest==1" ng-model="regForm.profile_interest" ng-true-value="1" ng-false-value="0">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="regForm.password">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Confirm Password" ng-model="regForm.cpassword">
+            </label>
+        </div>
+        <br>
+        <br>
+    </ion-content>
+    <div class="bar bar-footer bar-energized">
+        <button class="button button-clear pull-left" ng-click="back()"><i class="ion-ios-locked"></i></button>
+        <button class="button button-clear pull-right" ng-click="next()"><i class="ion-arrow-right-c"></i></button>
+    </div>
+
+
+
+
+
+    <script id="country.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">Country</h1>
+                <a class="button button-clear" side="left" ng-click="closeCountry()">
+                    <i class="ion-close-circled"></i>
+                </a>
+            </ion-header-bar>
+            <ion-content>
+                <label class="item item-input">
+                    <input type="text" placeholder="Search" ng-model="search">
+                </label>
+                <ion-list>
+                    <ion-item ng-click="closeCountry(country)" ng-repeat="country in location.country|filter:{country_name:search}">
+                        {{country.country_name}}
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <script id="state.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">State</h1>
+                <a class="button button-clear" side="left" ng-click="closeState()">
+                    <i class="ion-close-circled"></i>
+                </a>
+            </ion-header-bar>
+            <ion-content>
+                <label class="item item-input">
+                    <input type="text" placeholder="Search" ng-model="search">
+                </label>
+                <ion-list>
+                    <ion-item ng-click="closeState(state)" ng-repeat="state in location.state|filter:{state_name:search}">
+                        {{state.state_name}}
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <script id="city.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">City</h1>
+                <a class="button button-clear" side="left" ng-click="closeCity()">
+                    <i class="ion-close-circled"></i>
+                </a>
+            </ion-header-bar>
+            <ion-content>
+                <label class="item item-input">
+                    <input type="text" placeholder="Search" ng-model="search">
+                </label>
+                <ion-list>
+                    <ion-item ng-click="closeCity(city)" ng-repeat="city in location.city|filter:{city_name:search}">
+                        {{city.city_name}}
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <script id="profession.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">Profession</h1>
+                <a class="button button-clear" side="left" ng-click="closeProfession()">
+                    <i class="ion-close-circled"></i>
+                </a>
+            </ion-header-bar>
+            <ion-content>
+                <label class="item item-input">
+                    <input type="text" placeholder="Search" ng-model="search">
+                </label>
+                <ion-list>
+                    <ion-item ng-click="closeProfession(profession)" ng-repeat="profession in location.profession|filter:{profession_name:search}">
+                        {{profession.profession_name}}
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <script id="seeking-for.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">Seeking For</h1>
+                <a class="button button-clear" side="left" ng-click="closeSeekingFor()">
+                    <i class="ion-close-circled"></i>
+                </a>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-item ng-click="closeSeekingFor(1,'Work & Assignments')">
+                        Work & Assignments
+                    </ion-item>
+                    <ion-item ng-click="closeSeekingFor(2,'Jobs')">
+                        Jobs
+                    </ion-item>
+                    <ion-item ng-click="closeSeekingFor(3,'An Online Present')">
+                        An Online Present
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

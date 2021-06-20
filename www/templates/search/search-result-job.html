@@ -1,0 +1,19 @@
+<ion-view view-title="Search Result">
+    <div class="item item-divider search">
+        Results:{{total}}
+    </div>
+    <ion-content style="margin-top:36px">
+        <ion-list>
+            <ion-item class="item item-thumbnail-left" href="#/app/jobdetail/{{item.pk_com_jobpost_id}}" ng-repeat="item in list">
+                <img ng-if="item.company_logo==''" src="http://holonko.com/nologo.png">
+                <img ng-if="item.company_logo!=''" src="http://holonko.com/recruiter/upload/{{item.company_logo}}">
+                <h2>{{item.jobpost_title}}</h2>
+                <p>{{item.company_name}}</p>
+                <!--<p>Location ::<span ng-repeat="loc in item.location">{{$index==0?loc.city_name:","+loc.city_name}}</span></p>-->
+                <p>Last Date ::{{item.last_application_date}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="check()" ng-if="moreDataCanBeLoaded>0" on-infinite="fetchMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

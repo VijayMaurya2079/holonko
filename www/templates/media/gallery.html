@@ -1,0 +1,33 @@
+<ion-view view-title="Gallery">
+    <div class="tabs-striped tabs-top tabs-positive">
+        <div class="tabs">
+            <a href="#/app/gallery" class="tab-item active">
+                <i class="icon ion-images"></i> Gallery
+            </a>
+            <a href="#/app/video" class="tab-item">
+                <i class="icon ion-social-youtube"></i> Video
+            </a>
+        </div>
+    </div>
+    <ion-content class="has-subheader post-content gallery-top">
+        <div ng-repeat="item in items" ng-if="$index%3==0" class="row assertive">
+            <div class="col col-33 gallery-small" ng-show="items[$index].image_name">
+                <a class="item item-image" ng-click="showImage($index);">
+                    <img src="http://holonko.com/Profession/{{items[$index].image_name}}" />
+                </a>
+            </div>
+            <div class="col col-33 gallery-small" ng-show="items[$index + 1].image_name">
+                <a class="item item-image" ng-click="showImage($index + 1);">
+                    <img src="http://holonko.com/Profession/{{items[$index + 1].image_name}}" />
+                </a>
+            </div>
+            <div class="col col-33 gallery-small" ng-show="items[$index + 2].image_name">
+                <a class="item item-image" ng-click="showImage($index + 2);">
+                    <img src="http://holonko.com/Profession/{{items[$index + 2].image_name}}" />
+                </a>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="count>0" on-infinite="fetchMore()" distance="10%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

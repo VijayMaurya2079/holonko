@@ -1,0 +1,21 @@
+<ion-view view-title="Send Holonko Message">
+	<div class="bar bar-header bar-calm">
+		<a class="button icon ion-arrow-left-c" ng-click="back()"></a>
+		<h1 class="title">Send Holonko Message</h1>
+	</div>
+	<ion-content class="padding has-header">
+		<div class="list">
+			<div class="item item-avatar">
+				<img ng-if="detail.pic==''" src="http://holonko.com/user.png">
+				<img ng-if="detail.pic!=''" src="http://holonko.com/Profession/{{detail.pic}}">
+				<h2>{{detail.name}}</h2>
+				<p>{{detail.city}}</p>
+			</div>
+			<div class="item item-input item-stacked-label">
+				<span class="input-label">Post a recommendation</span>
+				<textarea rows="8" placeholder="Post a recommendation" ng-model="data.recommendation_note"></textarea>
+			</div>
+			<button class="button button-clam" ng-click="send()">Send</button>
+		</div>
+	</ion-content>
+</ion-view>

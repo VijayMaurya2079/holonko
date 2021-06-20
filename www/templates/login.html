@@ -1,0 +1,26 @@
+<ion-view view-title="Login" hide-nav-bar="true" class="grey_bg">
+    <ion-content>
+        <div class="list">
+            <p class="form_logo">
+                <img title="" alt="" src="img/logo.png" class="">
+            </p>
+            <label class="item item-input">
+                <input type="email" placeholder="Email" ng-model="login.email">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="login.password">
+            </label>
+            <p style="color:red;padding:5px;text-align:center">{{login.error}}</p>
+            <a ng-href="#/app/forgot" class="button button-clear button-block button-energized">Forgot Password?</a>
+            <button ng-click="doLogin()" class="button button-block button-energized">
+                LOGIN
+            </button>
+            <button class="button button-clear button-block">
+                Don't have an account?
+            </button>
+            <a ng-href="#/app/signup" class="button button-clear button-block button-energized">
+           	Create Account
+         </a>
+        </div>
+    </ion-content>
+</ion-view>

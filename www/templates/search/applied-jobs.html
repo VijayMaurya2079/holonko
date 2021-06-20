@@ -1,0 +1,18 @@
+<ion-view view-title="Applied Jobs">
+    <ion-content>
+        <div class="list">
+            <div class="item item-divider">
+                Results:{{result.total}}
+            </div>
+            <a class="item item-avatar" href="#/app/jobdetail/{{item.fk_com_jobpost_id}}" ng-repeat="item in list">
+                <img ng-if="item.detail.company_logo==''" src="http://holonko.com/nologo.png">
+                <img ng-if="item.detail.company_logo!=''" src="http://holonko.com/recruiter/upload/{{item.detail.company_logo}}">
+                <h2>{{item.detail.jobpost_title}}</h2>
+                <p>{{item.detail.company_name}}</p>
+                <p>Apply Date ::{{item.application_date}}</p>
+            </a>
+        </div>
+        <ion-infinite-scroll ng-if="moreDataCanBeLoaded>0" ng-if="result.data.length" on-infinite="fetchMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

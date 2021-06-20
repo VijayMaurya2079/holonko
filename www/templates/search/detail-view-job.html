@@ -1,0 +1,39 @@
+<ion-view view-title="Job Detail">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img ng-if="detail.company.company_logo==''" src="http://holonko.com/nologo.png">
+                <img ng-if="detail.company.company_logo!=''" src="http://holonko.com/recruiter/upload/{{detail.company.company_logo}}">
+                <h2>{{detail.company.company_name}}</h2>
+                <p>{{detail.company.industry_name}}</p>
+            </div>
+            <div class="item item-body">
+                <p><strong>{{detail.jobpost_title}}</strong></p>
+                <p><b>Post Date :</b> {{detail.post_date}}</p>
+                <p><b>Last Apply Date :</b> {{detail.last_application_date}}</p>
+
+                <p><b>Role :</b> {{detail.job_role_name}}</p>
+                <p><b>Eligiblity :</b> {{detail.eligiblity_criteria}}</p>
+                <p><b>Skills :</b> {{detail.skills_required}}</p>
+                <p><b>Exp :</b> {{detail.required_experience}}</p>
+                <p><b>CTC :</b> {{detail.minimum_package==""?"0":detail.minimum_package+"-"+detail.maximum_package==""?"0":detail.maximum_package}}</p>
+                <p ng-repeat="location in detail.location">
+                    <b>Location : </b> {{location.country_name+"/"+location.state_name+"/"+location.city_name}}
+                </p>
+            </div>
+            <div class="item item-body">
+                <p><strong>Company Profile</strong></p>
+                <p>Contact : <a href="tel:{{detail.company.primary_contact}}">{{detail.company.primary_contact}}</a></p>
+                <p>Website : <a href="http://{{detail.company.company_website}}">{{detail.company.company_website}}</a></p>
+                <p>Address : <a href="geo:{{detail.company.company_address}}">{{detail.company.company_address}}</a></p>
+            </div>
+            <div class="item item-body" ng-show="isLogin">
+                <p><strong>Apply</strong></p>
+                <label class="item item-input">
+                    <textarea ng-model="job.message" rows="5" placeholder="write discription"></textarea>
+                </label>
+                <button class="button button-block button-energized" ng-click="apply()">Apply</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

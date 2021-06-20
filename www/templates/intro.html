@@ -1,0 +1,43 @@
+<ion-view view-title="Slider" class="grey_bg" hide-nav-bar="true">
+    <style>
+        .slider-slide {
+            text-align: center;
+            min-height: 600px;
+            top: 10%;
+        }
+        
+        .slider-pager {
+            position: fixed;
+            bottom: 20px;
+        }
+        
+        .slider p {
+            padding: 0 15px 0 15px;
+            line-height: 1.5;
+        }
+    </style>
+    <ion-content has-header="true">
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+            <ion-slide>
+                <p class="list energized">Search Professionals like doctors, lawyers, Charted Accountants, Tailors, Carpenter or any professional you need</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="list energized">If you are a professional looking for work, clients, Jobs or an online profile welcome to one of the fastest Growing Professional’s Database
+                </p>
+            </ion-slide>
+            <ion-slide>
+                <p class="list energized">If you are looking for a professional but don’t know best for you. Post a requirement and professionals will contact you</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="list energized">If you know any professional who is unable to create own online profile. You can help those to create their online profile and give them more opportunities</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="list energized">Searching jobs is now easier for you. Just register and search jobs according to your profession & Industry.</p>
+                <p>
+                    <a ng-click="startApp();" class="assertive">Start App <i class="ion ion-arrow-right-c"></i></a>
+                </p>
+            </ion-slide>
+        </ion-slide-box>
+        <a ng-click="startApp()" style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;padding:20px;">Skip</a>
+    </ion-content>
+</ion-view>

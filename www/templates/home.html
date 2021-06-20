@@ -1,0 +1,25 @@
+<ion-view view-title="{{greet}}">
+	<ion-content class="padding">
+		<div style="margin-top:15%">
+			<h1 style="font-size: 55px;font-weight:400">Search<br> Professional</h1>
+			<a class="item item-input item-select" ui-sref="profession({from:'app.home'})">
+				<div class="input-label">
+					{{search.profession.profession_name}}
+				</div>
+			</a>
+			<a class="item item-input item-select" ui-sref="location({from:'app.home'})">
+				<div class="input-label">
+					{{search.location}}
+				</div>
+			</a>
+			<div class="home-buttons" style="margin-top:5%">
+				<p class="row">
+					<a class="col button button-small button-dark" ng-click="searchProfessional()" style="margin-right:4px">Search Professionals</a>
+					<a class="col button button-small button-dark" ng-click="searchAssignment()" style="margin-left:4px">Search Work </a>
+				</p>
+			</div>
+		</div>
+	</ion-content>
+	<div class="bar bar-footer bar-assertive" style="height: 8px;">
+	</div>
+</ion-view>

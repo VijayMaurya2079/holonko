@@ -1,0 +1,20 @@
+<ion-view view-title="Country">
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">Country</h1>
+        <a class="button button-clear" side="left" ng-click="close()">
+            <i class="ion-close-circled"></i>
+        </a>
+    </ion-header-bar>
+    <div class="search">
+        <label class="item item-input">
+            <input type="text" placeholder="Search Country" ng-model="search">
+        </label>
+    </div>
+    <ion-content style="margin-top:44px;">
+        <ion-list>
+            <ion-item ng-click="close(country)" ng-repeat="country in list|filter:{country_name:search}">
+                {{country.country_name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

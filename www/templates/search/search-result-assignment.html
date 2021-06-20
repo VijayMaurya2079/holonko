@@ -1,0 +1,18 @@
+<ion-view view-title="Search Result">
+    <div class="item item-divider search">
+        Results:{{result.total}}
+    </div>
+    <ion-content style="margin-top:36px">
+        <ion-list>
+            <ion-item class="item" href="#/app/assignmentdetail/{{item.pk_cor_assignment_id}}" ng-repeat="item in list">
+                <h2>{{item.assignment_title}}</h2>
+                <p>{{item.company_name}}</p>
+                <!--<p>Location ::{{item.city_name}}</p>
+                <p>Address ::{{item.work_address}}</p>-->
+                <p>Last Date ::{{item.last_application_date}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="moreDataCanBeLoaded>0" on-infinite="fetchMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

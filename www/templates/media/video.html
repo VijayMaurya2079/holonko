@@ -1,0 +1,24 @@
+<ion-view view-title="Gallery">
+    <div class="tabs-striped tabs-top tabs-positive">
+        <div class="tabs">
+            <a href="#/app/gallery" class="tab-item">
+                <i class="icon ion-images"></i> Gallery
+            </a>
+            <a href="#/app/video" class="tab-item active">
+                <i class="icon ion-social-youtube"></i> Video
+            </a>
+        </div>
+    </div>
+    <ion-content class="has-subheader post-content gallery-top">
+        <div class="list card" ng-repeat="item in items">
+            <div class="item">
+                <h2>{{item.video_title}}</h2>
+            </div>
+            <div class="item item-image video-container">
+                <iframe ng-src="{{videoEmbed(item.video_path)}}"></iframe>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="count>0" on-infinite="fetchMore()" distance="10%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,63 @@
+<ion-view view-title="Profile">
+    <ion-content>
+        <ion-refresher pulling-text="Loading..." on-refresh="doRefresh()"></ion-refresher>
+        <div id="content">
+            <div id="profile-info">
+                <img id="profile-image" ng-if="detail.pic==''" src="http://holonko.com/user.png">
+                <img id="profile-image" ng-if="detail.pic!=''" src="http://holonko.com/Profession/{{detail.pic}}">
+                <a ng-click="openMenu()">[Change Profile Pic]</a>
+                <h3 id="profile-name">{{detail.name}}<a href="#/app/updateprofile"><i class="icon ion-edit"></i></a></h3>
+                <span id="profile-description">{{detail.profession}} <br>
+             <a href="javascript:void(0)">
+             	{{detail.country+"/"+detail.state+"/"+detail.city}}
+             </a>
+			</span>
+            </div>
+        </div>
+        <div class="list card">
+            <br>
+            <div class="item item-body">
+                <p>Profile Interest<span class="item-note">{{detail.interest}}</span></p>
+                <p>Specilization<span class="item-note">NA</span></p>
+                <p>Mobile No.<span class="item-note">{{detail.mobile}}</span></p>
+                <p>Alternate No.<span class="item-note">{{detail.alternate}}</span></p>
+                <p>Gender<span class="item-note">{{detail.gender}}</span></p>
+                <p>Experience<span class="item-note">{{detail.experence}}</span></p>
+                <p>Industry<span class="item-note">{{detail.industry}}</span></p>
+            </div>
+            <div class="item item-body">
+                <p><strong>My Profile Description</strong></p>
+                <p>
+                    {{detail.description}}
+                </p>
+            </div>
+            <div class="item item-body">
+                <p><strong>Orgnization Details</strong></p>
+                <p>
+                    {{detail.description}}
+                </p>
+            </div>
+            <div class="item item-body">
+                <p><strong>Award and Achivements</strong></p>
+                <p>
+                    NA
+                </p>
+            </div>
+            <div class="item item-body">
+                <p><strong>Education Details</strong></p>
+                <p>NA</p>
+            </div>
+            <div class="item item-body">
+                <p><strong>Profile Performance</strong></p>
+                <p>
+                    <a href="#" class="subdued">0 Like</a>
+                    <a href="#" class="subdued">{{detail.comments}} Comments</a>
+                </p>
+                <p>
+                    <a href="#" class="subdued">{{detail.views}} Profile Views</a>
+                    <a href="#" class="subdued">{{detail.recommendations}} Recommendations</a>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Industry">
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">Profession</h1>
+        <a class="button button-clear" side="left" ng-click="close()">
+            <i class="ion-close-circled"></i>
+        </a>
+    </ion-header-bar>
+    <div class="search">
+        <label class="item item-input">
+            <input type="text" placeholder="Search Profession" ng-model="search">
+        </label>
+    </div>
+    <ion-content>
+        <label class="item item-input">
+            <input type="text" placeholder="Search" ng-model="search">
+        </label>
+        <ion-list>
+            <ion-item ng-click="close(profession)" ng-repeat="profession in list|filter:{profession_name:search}">
+                {{profession.profession_name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

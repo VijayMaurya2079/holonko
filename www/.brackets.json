@@ -1,0 +1,30 @@
+{
+    "jscodehints.detectedExclusions": [
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/angular-ui/angular-ui-router.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/cordova_plugins.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/angular/ngstorage/package.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/angular/ngstorage/ngStorage.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/cordova.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/plugins/cordova-plugin-device/www/device.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/main/data.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/modules/angular-ios9-uiwebview.patch.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/main/auth.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/common/router.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/common/ng-cordova.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/common/filters.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/cordova-js-src/plugin/android/app.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/plugins/cordova-plugin-whitelist/whitelist.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/ionic.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/ionic.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/ionic.bundle.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ionic/js/ionic.bundle.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ngCordova/dist/ng-cordova.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ngCordova/dist/ng-cordova.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ngCordova/dist/ng-cordova-mocks.min.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/js/main/search.js",
+        "G:/Codes And Projects/project/Bito/Mobile/Holonko/App/www/lib/ngCordova/dist/ng-cordova-mocks.js",
+        "bower_components/angular/angular.js"
+    ]
+}

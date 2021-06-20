@@ -1,0 +1,14 @@
+<ion-view view-title="Upload Professional Profile Image">
+    <div class="bar bar-header bar-positive">
+        <h1 class="title">Upload Profile Picture</h1>
+    </div>
+    <ion-content padding="10">
+        <center>
+            <img ng-if="profilePic==1" src="http://holonko.com/user.png" style="border-radius: 50%;width: 100%; height:100%;max-width: 120px;max-height: 120px;">
+            <img ng-if="profilePic!=1" src="http://holonko.com/Profession/{{profilePic}}" style="border-radius: 50%;width: 100%; height:100%;max-width: 120px;max-height: 120px;">
+            <br>
+            <br>
+            <a class="button button-clear button-energized" ng-click="openMenu()">[Profile Picture]</a>
+        </center>
+    </ion-content>
+</ion-view>

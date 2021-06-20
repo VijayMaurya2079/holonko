@@ -1,0 +1,43 @@
+<ion-view view-title="Add Professional">
+    <ion-content>
+        <div class="list">
+            <a class="item item-input" ui-sref="profession({from:'app.addnewprofessional'})">
+                <div class="input-label">
+                    {{reg.profession.profession_name}}
+                </div>
+            </a>
+            <a class="item item-input" ui-sref="country({from:'app.addnewprofessional'})">
+                <div class="input-label">
+                    {{reg.country.country_name}}
+                </div>
+            </a>
+            <a class="item item-input" ui-sref="state({from:'app.addnewprofessional',id:reg.country.pk_utm_country_id})">
+                <div class="input-label">
+                    {{reg.state.state_name}}
+                </div>
+            </a>
+            <a class="item item-input" ui-sref="city({from:'app.addnewprofessional',id:reg.state.pk_utm_state_id})">
+                <div class="input-label">
+                    {{reg.city.city_name}}
+                </div>
+            </a>
+            <label class="item item-input">
+                <input type="text" placeholder="Name" ng-model="reg.name">
+            </label>
+            <label class="item item-divider">
+                Gender
+            </label>
+            <ion-list>
+                <ion-radio ng-model="regForm.gender" ng-value="'Male'">Male</ion-radio>
+                <ion-radio ng-model="regForm.gender" ng-value="'Female'">Female</ion-radio>
+            </ion-list>
+            <label class="item item-input">
+                <input type="tel" placeholder="Mobile No" ng-model="reg.mobile_no">
+            </label>
+            <label class="item item-input">
+                <input type="email" placeholder="Email ID" ng-model="reg.email">
+            </label>
+            <button class="button button-full button-energized" ng-click="registration()">Submit</button>
+        </div>
+    </ion-content>
+</ion-view>

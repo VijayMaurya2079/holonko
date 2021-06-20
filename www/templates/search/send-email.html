@@ -1,0 +1,25 @@
+<ion-view view-title="Send an Email">
+	<div class="bar bar-header bar-calm">
+		<button class="button icon ion-arrow-left-c" ng-click="back()"></button>
+		<h1 class="title">Send an Email</h1>
+	</div>
+	<ion-content class="padding has-header">
+		<div class="list">
+			<div class="item item-avatar">
+				<img ng-if="detail.pic==''" src="http://holonko.com/user.png">
+				<img ng-if="detail.pic!=''" src="http://holonko.com/Profession/{{detail.pic}}">
+				<h2>{{detail.name}}</h2>
+				<p>{{detail.city}}</p>
+			</div>
+			<div class="item item-input item-stacked-label">
+				<span class="input-label">Subject</span>
+				<input type="text" placeholder="Subject">
+			</div>
+			<div class="item item-input item-stacked-label">
+				<span class="input-label">Mesage</span>
+				<textarea rows="8"  placeholder="Mesage"></textarea>
+			</div>
+			<button class="button button-clam">Send</button>
+		</div>
+	</ion-content>
+</ion-view>

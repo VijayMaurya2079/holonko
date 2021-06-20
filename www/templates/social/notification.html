@@ -1,0 +1,21 @@
+<ion-view view-title="Notification">
+    <style>
+        pp {
+            white-space: normal !important;
+        }
+        .new{
+            font-weight: bold;
+        }
+    </style>
+    <ion-content has-header="true">
+        <ion-list>
+            <ion-item class="item-avatar" ng-repeat="item in items">
+                <img ng-if="item.profile_image==''" src="http://holonko.com/user.png">
+                <img ng-if="item.profile_image!=''" src="http://holonko.com/Profession/{{item.profile_image}}">
+                <pp ng-class="{new:item.view_status==0}">{{item.notification_text}}</pp>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="check()" on-infinite="fetchMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

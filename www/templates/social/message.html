@@ -1,0 +1,47 @@
+<ion-view title="{{title}}">
+    <ion-content class="post-content-message">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        <div class="list">
+            <div class="">
+                <div ng-repeat="message in items" class="message-wrapper">
+                    <div ng-show="message.from == 1">
+                        <div class="chat-bubble left">
+                            <div class="message preword">
+                                <span>{{message.message_text}}</span>
+                            </div>
+                            <div class="message-detail">
+                                <span>{{message.transaction_date}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="message.from == 2">
+                        <div class="chat-bubble right">
+                            <div class="message preword">
+                                <span>{{message.message_text}}</span>
+                            </div>
+                            <div class="message-detail">
+                                <span>{{message.transaction_date}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cf"></div>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="postsCompleted == false" on-infinite="getMessage()" distance="10%"></ion-infinite-scroll>
+    </ion-content>
+    <div class="bar bar-footer bar-stable comment-stable-main">
+        <form class="comment-form-main" method="post" ng-submit="addMesage(postForm.$valid)" name="postForm" novalidate>
+            <div class="row small-font row-comment">
+                <span class="col-75">
+                	<label class="item item-input comment-div-label">
+                        <textarea class="comment-main-text" required ng-model="message_text" name="message" placeholder="Message" auto-focus></textarea>
+                   	</label>
+                </span>
+                <span class="col-25">
+                    <button ng-disabled="postForm.$invalid"  class="button button-block button-assertive button-comment"><span class="icon ion-android-send"></span></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</ion-view>

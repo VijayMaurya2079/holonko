@@ -1,0 +1,24 @@
+<ion-view view-title="Location">
+	<ion-header-bar class="bar-positive">
+		<h1 class="title">Location</h1>
+		<a class="button button-clear" side="left" ng-click="close()">
+			<i class="ion-close-circled"></i>
+		</a>
+	</ion-header-bar>
+	<div class="bar bar-subheader item-input-inset">
+		<label class="item-input-wrapper">
+			<i class="icon ion-ios-search placeholder-icon"></i>
+			<input type="search" placeholder="Search Location" ng-model="text">
+		</label>
+		<button class="button button-clear" ng-click="search()">Search</button>
+	</div>
+	<ion-content style="margin-top:44px;">
+		<ion-list>
+			<ion-item ng-click="close(l)" ng-repeat="l in list track by $index">
+				{{l.location}}
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll ng-if="check()" on-infinite="fetchMore()" distance="1%">
+        </ion-infinite-scroll>
+	</ion-content>
+</ion-view>

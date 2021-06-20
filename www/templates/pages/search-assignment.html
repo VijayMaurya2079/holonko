@@ -1,0 +1,51 @@
+<ion-view view-title="Serch Assignment">
+    <ion-content padding="10">
+        <h2>Search</h2>
+        <!--<div class="button-bar">
+            <a href="#/app/tab/searchprofessional" class="button">Professional</a>
+            <a href="#/app/tab/searchjob" class="button">Job</a>
+            <a href="#/app/tab/searchassignment" class="button button-clear button-positive">Assignment</a>
+        </div>-->
+        <div class="list list-inset">
+            <label class="item item-divider">
+                Filter::
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Industry
+                </div>
+                <select ng-model="list.selected.industry" ng-options="industry.industry_name for industry in list.industry">
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Country
+                </div>
+                <select ng-model="list.selected.country" ng-change="loadState()" ng-options="country.country_name for country in list.country">
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    State
+                </div>
+                <select ng-model="list.selected.state" ng-change="loadCity()" ng-options="state.state_name for state in list.state">
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    City
+                </div>
+                <select ng-model="list.selected.city" ng-options="city.city_name for city in list.city">
+                </select>
+            </label>
+            <label class="item item-divider">
+                Search
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="search.text">
+            </label>
+        </div>
+        <button class="button button-block button-energized" ng-click="getResult()">Search</button>
+    </ion-content>
+</ion-view>

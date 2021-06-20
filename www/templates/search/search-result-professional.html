@@ -1,0 +1,21 @@
+<ion-view view-title="Search Result">
+    <div class="item item-divider search">
+        Results:{{total}}
+    </div>
+    <ion-content style="margin-top:36px">
+        <ion-list can-swipe="isLogin">
+            <ion-item class="item-avatar" ng-repeat="item in list" href="#/app/professionaldetail/{{item.pk_professional_id}}">
+                <img ng-if="item.profile_image==''" src="http://holonko.com/user.png">
+                <img ng-if="item.profile_image!=''" src="http://holonko.com/Profession/{{item.profile_image}}">
+                <h2>{{item.professional_name}}</h2>
+                <p>{{item.profession_name}}</p>
+				<p>{{item.recommendations}} Recommendations</p>
+                <ion-option-button class="button-positive" ng-show="item.isFriend ===0" ng-click="sendRequest(item)">
+                    <i class="ion ion-person-add"></i>
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="check()" on-infinite="fetchMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

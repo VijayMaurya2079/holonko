@@ -1,0 +1,18 @@
+<ion-view view-title="Forgot Password" class="grey_bg" hide-nav-bar="true">
+  	<ion-content padding="10">
+      <div class="list">
+			<p class="form_logo">
+         	<img title="" alt="" src="img/logo.png" class="">
+         </p>
+        	<label class="item item-input">
+          	<input type="email" placeholder="Email" ng-model="forgot.email">
+        	</label>
+        	<button class="button button-block button-energized" ng-click="reset()">
+           	RESET PASSWORD
+         </button>
+         <a ng-click="gotoLogin()" class="button button-clear button-block button-energized">
+           	Back to Login
+         </a>
+      </div>
+  </ion-content>
+</ion-view>

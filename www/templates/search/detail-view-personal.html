@@ -1,0 +1,60 @@
+<ion-view view-title="Personal Detail">
+	<ion-content>
+		<ion-refresher pulling-text="Loading..." on-refresh="doRefresh()">
+		</ion-refresher>
+		<div class="list card">
+			<div class="item item-thumbnail-left">
+				<img ng-if="detail.pic==''" src="http://holonko.com/user.png">
+				<img ng-if="detail.pic!=''" src="http://holonko.com/Profession/{{detail.pic}}">
+				<h2>{{detail.name}}</h2>
+				<p>{{detail.profession}}</p>
+				<p>{{detail.recommendations.length}} Recommendations</p>
+				<!--<a href="" ng-show="detail.isFriend===0 && isLogin===true" ng-click="sendRequest()">Add Contact</a>-->
+			</div>
+		</div>
+		<div class="list card">
+			<div class="item">Industry<span class="item-note" style="width:75%;white-space: normal;text-align: right;">{{detail.industry}}</span></div>
+			<div class="item">Experience<span class="item-note">{{detail.experence}}</span></div>
+			<div class="item">Profile Interest<span class="item-note">{{detail.interest}}</span></div>
+			<div class="item">Current City<span class="item-note">{{detail.city}}</span></div>
+		</div>
+		<div class="list card">
+			<div class="item item-button-right" ng-show="detail.mobile!=''">{{detail.mobile}}
+				<a class="button button-clear button-calm" style="margin-right:15%" href="tel:{{detail.mobile}}"><i class="icon ion-android-call"></i></a>
+				<a class="button button-clear button-calm" href="sms:{{detail.mobile}}"><i class="icon ion-chatbox"></i></a>
+			</div>
+			<div class="item item-button-right" ng-show="detail.alternate!=''">{{detail.alternate}}
+				<a class="button button-small button-clear button-calm" style="margin-right:15%" href="tel:{{detail.alternate}}">Call</a>
+				<a class="button button-small button-clear button-calm" href="sms:{{detail.alternate}}">SMS</a>
+			</div>
+			<div class="item">
+				<a href="mailto:{{detail.email}}" class="button button-small button-calm">Send an E-Mail</a>
+				<a ui-sref="recom" class="button button-small button-calm">Post a recommendation</a>
+			</div>
+		</div>
+		<div class="list card">
+			<p class="padding"><strong>Recommendations</strong></p>
+			<div class="padding" ng-show="detail.recommendations.length==0">No Recommendations </div>
+			<div ng-repeat="r in detail.recommendations">
+				<div class="padding">{{r.recommendation_note}}
+					<div class="item item-avatar">
+						<img ng-if="r.pic==''" src="http://holonko.com/user.png">
+						<img ng-if="r.pic!=''" src="http://holonko.com/Profession/{{r.pic}}">
+						<p>{{r.name}}</p>
+						<p>{{r.recommendation_date}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list card">
+			<div class="item item-body">
+				<p><strong>Profile Performance</strong></p>
+				<p>
+					<a href="#" class="subdued">0 Like</a>
+					<a href="#" class="subdued">{{detail.comments}} Comments</a>
+					<a href="#" class="subdued">{{detail.views}} Profile Views</a>
+				</p>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="HolonkoApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'  'unsafe-eval' data:;
+                                                        style-src 'self' 'unsafe-inline'; media-src *;
+                                                        script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                                                        connect-src 'self' http://holo.bitoapi.in http://holonko.com;
+                                                        img-src 'self' *">-->
+
+    <title>Holonko</title>
+    <link href="css/ionic.app.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <!-- your app's js -->
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ionic/js/angular/ngStorage.min.js"></script>
+    <script src="lib/angular-touch/angular-touch.min.js"></script>
+    <!-- main app js -->
+    <script src="js/modules/angular-ios9-uiwebview.patch.js"></script>
+    <script src="js/main/app.js"></script>
+    <script src="js/main/auth.js"></script>
+    <script src="js/main/controllers.js"></script>
+    <script src="js/main/data.js"></script>
+    <script src="js/main/common.js"></script>
+    <script src="js/main/search.js"></script>
+    <script src="js/main/social.js"></script>
+    <script src="js/main/media.js"></script>
+
+    <!-- common js -->
+    <script src="js/common/app.js"></script>
+    <script src="js/common/router.js"></script>
+    <script src="js/common/filters.js"></script>
+    <script src="js/common/directives.js"></script>
+
+    <style>
+        .search {
+            position: absolute;
+            z-index: 99;
+            margin-top: 44px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body class="platform-android platform-cordova platform-webview">
+    <div ng-init="isOnline=true" ng-hide="isOnline" style="padding:2px 0px 2px 0px;z-index:9999;position:absolute;width:100%;background-color: #F3F0F0;color: red;">
+        <p><i style="font-size:32px;margin-left:25%;" class="icon ion-alert-circled"></i> &nbsp;Internet connection not found</p>
+    </div>
+    <ion-nav-view>
+    </ion-nav-view>
+</body>
+
+</html>
